@@ -6,7 +6,8 @@ class Joueur(Entite): # Initialise le joueur, (niveau 1 avec 0 xp et 10 de degat
         self.niveau = 1
         self.xp = 0
     
-    def monterNiveau(self): # Quand l'xp du joueur arrive a 100 fois son niveau, il monte de niveau et l'xp retourne a 0
+    def monterNiveau(self): # Quand l'xp du joueur arrive a 100 fois son niveau, il monte de niveau, l'xp retourne a 0
         if self.xp >= self.niveau * 100:
             self.niveau += 1
             self.xp = 0
+            print(f"Vous etes montez de niveau ! (Niveau actuel : {self.niveau})")
