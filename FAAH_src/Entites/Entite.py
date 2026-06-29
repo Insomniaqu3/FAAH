@@ -6,6 +6,7 @@ class Entite:
         self.armure = armure
 
     def attaquer(self, cible):
+        print(f"{self} a attaquer un {cible} ! ({cible.hp} / {hpTemp}) ")
         return cible.prendreDegats(self.degats)
 
     def prendreDegats(self, montant):

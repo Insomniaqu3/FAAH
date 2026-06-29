@@ -16,8 +16,9 @@ def game(delta, joueur, ennemiActuel):
         ennemiActuel = spawnEnnemi(joueur.niveau)
     hpTemp = ennemiActuel.hp
     joueur.attaquer(ennemiActuel)
-    print(f"Le joueur {nomJoueur} a attaquer un {ennemiActuel.nom} ! ({ennemiActuel.hp} / {hpTemp}) ")
+    print(f"Le joueur {nomJoueur} a attaque un {ennemiActuel.nom} ! ({ennemiActuel.hp} / {hpTemp}) ")
     time.sleep(2)
+    ennemiActuel.attaquer(joueur)
     return ennemiActuel
 
 # Boucle de jeu principale

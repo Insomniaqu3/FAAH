@@ -10,4 +10,4 @@ class Joueur(Entite): # Initialise le joueur, (niveau 1 avec 0 xp et 10 de degat
         if self.xp >= self.niveau * 100:
             self.niveau += 1
             self.xp = 0
-            print(f"Vous etes montez de niveau ! (Niveau actuel : {self.niveau})")
+            print(f"Vous etes monter de niveau ! (Niveau actuel : {self.niveau})")
