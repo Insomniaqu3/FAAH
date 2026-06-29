@@ -9,11 +9,18 @@ joueur = Joueur(nomJoueur)
 ennemiActuel = spawnEnnemi(joueur.niveau)
 
 def choisirAction():
-    print("Que voulez vous faire ?")
-    print("1 : Ataquer")
-    print("2 : Utiliser un objet")
-    choix = input
-    return choix
+    while True:
+        print("Que voulez vous faire ?")
+        print("1 : Attaquer")
+        print("2 : Utiliser un objet")
+        try:
+            choix = int(input("> "))
+            if choix in (1, 2):
+                return choix
+            else:
+                print("Choix invalide")
+        except ValueError:
+            print("Entrez un nombre entier")
 
 def game(delta, joueur, ennemiActuel):
     if ennemiActuel.hp == 0:
@@ -22,18 +29,13 @@ def game(delta, joueur, ennemiActuel):
         time.sleep(2)
         ennemiActuel = spawnEnnemi(joueur.niveau)
 
-    choix = choisirAction
-    try:
-        if choix == 1:
-            joueur.attaquer(ennemiActuel)
-        elif choix == 2:
-            pass # Objet non implemeter
-    except :
-        pass
-
-    hpTemp = ennemiActuel.hp
-    joueur.attaquer(ennemiActuel)
-    print(f"Le joueur {nomJoueur} a attaque un {ennemiActuel.nom} ! ({ennemiActuel.hp} / {hpTemp}) ")
+    choix = choisirAction()
+    if choix == 1:
+        joueur.attaquer(ennemiActuel)
+    elif choix == 2:
+        pass # Objet non implemeter
+    else:
+        print("Choix invalide")
     time.sleep(2)
     ennemiActuel.attaquer(joueur)
     return ennemiActuel
