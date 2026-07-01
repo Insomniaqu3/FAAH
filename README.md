@@ -4,9 +4,10 @@
 ## TODO
 
 ### En cours
-- [ ] Boucle de combat complète (Le joueur choisis ses actions)
+- [X] Boucle de combat complète (Le joueur choisis ses actions)
 - [ ] Condition de victoire/défaite
 - [ ] Implementer l'armure (Reduction degats, niveaux d'armures)
+- [ ] Art/animations/UI en ASCII
 
 ### À faire
 - [ ] Boss
