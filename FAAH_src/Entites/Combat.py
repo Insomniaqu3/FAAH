@@ -13,9 +13,10 @@ class Combat:
             print("Que voulez vous faire ?")
             print("1 : Attaquer")
             print("2 : Utiliser un objet")
+            print("3 : Quitter le jeu")
             try:
                 choix = int(input("> "))
-                if choix in (1, 2):
+                if choix in (1, 2, 3):
                     return choix
                 else:
                     print("Choix invalide")
@@ -33,6 +34,8 @@ class Combat:
             self.joueur.attaquer(self.ennemiActuel)
         elif choix == 2:
             pass # Objet non implemeter
+        elif choix == 3:
+            return False
         else:
             print("Choix invalide")
         time.sleep(2)
@@ -41,7 +44,9 @@ class Combat:
     def gameLoop(self):
         # Boucle de jeu principale
         while True:
-            self.tour()
+            tourActuel = self.tour()
+            if tourActuel is False:
+                break
             if self.joueur.hp == 0:
                 print("Game Over !")
-                break
+                break    
